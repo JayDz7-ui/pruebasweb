@@ -3,29 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mapa con Geolocalización</title>
 
-    <title>Página de Bienvenida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <main class="page">
+        <header class="intro">
+            <h1>Mi ubicación actual</h1>
+            <p>Tu ubicación se mostrará en el siguiente mapa.</p>
+        </header>
 
-    <div class="contenedor" id="contenido">
+        <section class="map-card">
+            <div id="map" aria-label="Mapa con tu ubicación"></div>
 
-        <h1 class="bienvenida">¡Bienvenido a mi página!</h1>
+            <div class="status" id="status" role="status" aria-live="polite">
+                Buscando tu ubicación…
+            </div>
+        </section>
 
-        <!-- Imagen -->
-        <img src="images (1).jpg" alt="Imagen de bienvenida" class="imagen">
+        <footer class="actions">
+            <p class="coords" id="coords">Coordenadas: pendientes</p>
+            <button type="button" id="recenter" disabled>Centrar en mi ubicación</button>
+        </footer>
+    </main>
 
-        <!-- Video -->
-        <div class="video">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/yUJLtG3YIzE?si=C4kIynQaxB_Wfy2h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-    </div>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
